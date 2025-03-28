@@ -42,10 +42,13 @@ npm install hjson
 # Usage
 
 ```
-let Hjson = require('hjson');
+import Hjson from 'hjson';
 
-let obj = Hjson.parse(hjsonText);
-let text2 = Hjson.stringify(obj);
+// Parse Hjson
+const config = Hjson.parse(hjsonText);
+
+// Stringify to Hjson
+const hjsonOutput = Hjson.stringify(config);
 ```
 
 To keep comments intact see [API](#modify--keep-comments).
