@@ -7,23 +7,17 @@ export default defineConfig({
       entry: 'lib/hjson.js',
       name: 'Hjson',
       formats: ['umd', 'es'],
-      fileName: (format) => `hjson.${format === 'umd' ? '' : format}.js`,
+      fileName: (format) => `hjson.${format}.js`,
     },
-    sourcemap: true,
     rollupOptions: {
       output: {
         exports: 'named',
-      },
-    },
+      }
+    }
   },
   plugins: [
     nodePolyfills({
-      include: ['os', 'fs', 'path'],
-      overrides: {
-        os: {
-          EOL: '\n',
-        },
-      },
+      include: ['os', 'path', 'fs'],
     }),
   ],
 });
