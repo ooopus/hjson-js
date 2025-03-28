@@ -1,7 +1,11 @@
 
-let Hjson = require("..");
-let fs = require("fs");
-let path = require("path");
+import Hjson from "../lib/hjson.js";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 let rootDir = path.normalize(path.join(__dirname, "assets"));
 
 let args={}, argv=[];

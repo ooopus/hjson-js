@@ -1,8 +1,8 @@
 {
   "name": "hjson",
+  "type": "module",
   "description": "A user interface for JSON.",
   "main": "./lib/hjson.js",
-  "author": "Christian Zangl",
   "version": "3.2.2",
   "keywords": [
     "json",
@@ -17,7 +17,8 @@
     "hjson": "./bin/hjson"
   },
   "scripts": {
-    "test": "node ./test/test.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "lint": "node_modules/eslint/bin/eslint.js -f unix bin/hjson lib/*.js",
     "build_v1": "node -e 'console.log(\"module.exports=\\\"\"+eval(\"(\"+process.argv[1]+\")\").version+\"\\\";\");' -- \"`cat package.json`\" > lib/hjson-version.js",
     "build_v2": "node -e 'let v=\" * Hjson v\"+eval(\"(\"+process.argv[1]+\")\").version; if (v!==process.argv[2]) throw new Error(\"ver\");' -- \"`cat package.json`\" \"`grep -E '\\* Hjson v.*$' lib/hjson.js`\"",
@@ -35,9 +36,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "browserify": "^13.3.0",
-    "browserify-header": "0.9.2",
-    "eslint": "^3.13.1",
-    "uglify-js": "^2.7.5"
-  }
+    "@changesets/cli": "^2.28.1",
+    "browserify": "^17.0.1",
+    "browserify-header": "1.1.0",
+    "eslint": "^9.23.0",
+    "uglify-js": "^3.19.3",
+    "vitest": "^3.0.9"
+  },
+  "packageManager": "pnpm@10.7.0+sha512.6b865ad4b62a1d9842b61d674a393903b871d9244954f652b8842c2b553c72176b278f64c463e52d40fff8aba385c235c8c9ecf5cc7de4fd78b8bb6d49633ab6"
 }
