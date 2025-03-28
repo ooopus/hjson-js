@@ -85,12 +85,12 @@
 - v1.4.0
   - Changed the browser interface to match the node api (which didn't change).
   - Fixed parse for leading zeros ("00") and trailing comments.
-  - Fixed stringify for /**/ and //
+  - Fixed stringify for /\*\*/ and //
   - Added more test cases.
 - v1.3.0
   - Added support for the simplified syntax.
 - v1.2.0
-  - Added old fashioned /**/ comments.
+  - Added old fashioned /\*\*/ comments.
   - Fixed the missing EOL (cli only).
 - v1.1.0
   - add // support

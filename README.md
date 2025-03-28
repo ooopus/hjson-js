@@ -84,10 +84,10 @@ Domain specific formats are optional extensions to Hjson and can be enabled with
 ```
 
 Sample:
+
 - run `hjson -j test.hjson > test.json` to convert to JSON
 - run `hjson test.json > test.hjson` to convert to Hjson
 - run `hjson test.json` to view colorized output
-
 
 # API
 
@@ -97,36 +97,36 @@ The API is the same for the browser and node.js version.
 
 ### Hjson.parse(text, options)
 
-This method parses *JSON* or *Hjson* text to produce an object or array.
+This method parses _JSON_ or _Hjson_ text to produce an object or array.
 
-- *text*: the string to parse as JSON or Hjson
-- *options*: object
-  - *keepWsc*: boolean, keep white space and comments. This is useful if you want to edit an hjson file and save it while preserving comments (default false)
+- _text_: the string to parse as JSON or Hjson
+- _options_: object
+  - _keepWsc_: boolean, keep white space and comments. This is useful if you want to edit an hjson file and save it while preserving comments (default false)
 
 ### Hjson.stringify(value, options)
 
 This method produces Hjson text from a JavaScript value.
 
-- *value*: any JavaScript value, usually an object or array.
-- *options*: object
-  - *keepWsc*: boolean, keep white space. See parse.
-  - *condense*: integer, will try to fit objects/arrays onto one line. Default 0 (off).
-  - *bracesSameLine*: boolean, makes braces appear on the same line as the key name. Default false.
-  - *emitRootBraces*: boolean, show braces for the root object. Default true.
-  - *quotes*: string, controls how strings are displayed. (setting separator implies "strings")
+- _value_: any JavaScript value, usually an object or array.
+- _options_: object
+  - _keepWsc_: boolean, keep white space. See parse.
+  - _condense_: integer, will try to fit objects/arrays onto one line. Default 0 (off).
+  - _bracesSameLine_: boolean, makes braces appear on the same line as the key name. Default false.
+  - _emitRootBraces_: boolean, show braces for the root object. Default true.
+  - _quotes_: string, controls how strings are displayed. (setting separator implies "strings")
     - "min": no quotes whenever possible (default)
     - "keys": use quotes around keys
     - "strings": use quotes around string values
     - "all": use quotes around keys and string values
-  - *multiline*: string, controls how multiline strings are displayed. (setting quotes implies "off")
+  - _multiline_: string, controls how multiline strings are displayed. (setting quotes implies "off")
     - "std": strings containing \n are shown in multiline format (default)
     - "no-tabs": like std but disallow tabs
     - "off": show in JSON format
-  - *separator*: boolean, output a comma separator between elements. Default false
-  - *space*: specifies the indentation of nested structures. If it is a number, it will specify the number of spaces to indent at each level. If it is a string (such as '\t' or '&nbsp;'), it contains the characters used to indent at each level.
-  - *eol*: specifies the EOL sequence (default is set by Hjson.setEndOfLine())
-  - *colors*: boolean, output ascii color codes
-  - *sortProps*: boolean, when serializing objects into hjson, order the keys based on their UTF-16 code units order. Default false.
+  - _separator_: boolean, output a comma separator between elements. Default false
+  - _space_: specifies the indentation of nested structures. If it is a number, it will specify the number of spaces to indent at each level. If it is a string (such as '\t' or '&nbsp;'), it contains the characters used to indent at each level.
+  - _eol_: specifies the EOL sequence (default is set by Hjson.setEndOfLine())
+  - _colors_: boolean, output ascii color codes
+  - _sortProps_: boolean, when serializing objects into hjson, order the keys based on their UTF-16 code units order. Default false.
 
 ### Hjson.endOfLine(), .setEndOfLine(eol)
 
@@ -164,6 +164,7 @@ data.foo = "text";
 // convert back to Hjson
 console.log(Hjson.rt.stringify(data));
 ```
+
 # Build
 
 To run all tests and create the bundle output, first install the dev dependencies with `npm i` and then run `npm run build`.
@@ -171,4 +172,3 @@ To run all tests and create the bundle output, first install the dev dependencie
 # History
 
 [see history.md](history.md)
-
