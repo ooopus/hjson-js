@@ -1,10 +1,10 @@
 
-var Hjson=require("hjson");
-var fs=require("fs");
-var text=fs.readFileSync("test.hjson", "utf8");
+let Hjson=require("hjson");
+let fs=require("fs");
+let text=fs.readFileSync("test.hjson", "utf8");
 
 // parse either JSON or Hjson
-var data=Hjson.parse(text);
+let data=Hjson.parse(text);
 console.log(data.hello);
 console.log();
 

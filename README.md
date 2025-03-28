@@ -42,10 +42,10 @@ npm install hjson
 # Usage
 
 ```
-var Hjson = require('hjson');
+let Hjson = require('hjson');
 
-var obj = Hjson.parse(hjsonText);
-var text2 = Hjson.stringify(obj);
+let obj = Hjson.parse(hjsonText);
+let text2 = Hjson.stringify(obj);
 ```
 
 To keep comments intact see [API](#modify--keep-comments).
@@ -146,7 +146,7 @@ Require a config file directly.
 
 ```
 require("hjson/lib/require-config");
-var cfg=require("./config.hjson");
+let cfg=require("./config.hjson");
 ```
 
 ## modify & keep comments
@@ -156,7 +156,7 @@ You can modify a Hjson file and keep the whitespace & comments intact (round tri
 ```
 // parse, keep whitespace and comments
 // (they are stored in a non enumerable __COMMENTS__ member)
-var data = Hjson.rt.parse(text);
+let data = Hjson.rt.parse(text);
 
 // modify like you normally would
 data.foo = "text";
